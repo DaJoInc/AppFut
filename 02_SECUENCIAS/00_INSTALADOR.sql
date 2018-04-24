@@ -1,0 +1,3 @@
+PROMPT 01_SECUENCIAS.sql...
+@@01_SECUENCIAS.sql
+

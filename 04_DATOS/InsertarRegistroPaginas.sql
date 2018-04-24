@@ -1,0 +1,1 @@
+insert into "OW_TST_US"."Pagina"("id","nombre_pagina","tipo_pagina") values(1,'ferreteria',1);
