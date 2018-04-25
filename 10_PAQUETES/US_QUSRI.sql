@@ -1,33 +1,48 @@
+---------------------------------------------PAQUETE DE REGISTRO DE USUARIO------------------------------------------------------------------------------------------------------
+--CONTIENE LOS SIGUINETES PROCESOS 																																				-
+----------------------------------REGISTRO DE PERSONA                                                                                                                           -
+----------------------------------REGISTRO DE USUARIO                                                                                                                           -
+----------------------------------ACTUALIZAR CONTRASEÑA                                                                                                                         -
+--===============================================================================================================================================================================
 CREATE OR REPLACE PACKAGE US_QUSRI AS
 
-	PROCEDURE REGISTRO_PERSONA(
-            p_Id_Persona         		 IN US_PSNA.PSNA_PSNA%type,
-            p_Nombre_Persona			 IN US_PSNA.PSNA_NOBR%type,
-			p_Apellido_Persona		 	 IN US_PSNA.PSNA_APDO%type,
-			p_Tipo_Documento		     IN US_PSNA.PSNA_TPDOC%type,
-			p_Documento_Persona		 	 IN US_PSNA.PSNA_DOTO%type,
-			p_Fecha_Nacimiento		 	 IN US_PSNA.PSNA_FCNA%type,
-			cod_respuesta        		 OUT VARCHAR,
-			msg_respuesta        		 OUT VARCHAR
+	PROCEDURE REGISTRO_PERSONA
+	(
+        p_Id_Persona         		 IN US_PSNA.PSNA_PSNA%type,
+        p_Nombre_Persona			 IN US_PSNA.PSNA_NOBR%type,
+		p_Apellido_Persona		 	 IN US_PSNA.PSNA_APDO%type,
+		p_Tipo_Documento		     IN US_PSNA.PSNA_TPDOC%type,
+		p_Documento_Persona		 	 IN US_PSNA.PSNA_DOTO%type,
+		p_Fecha_Nacimiento		 	 IN US_PSNA.PSNA_FCNA%type,
+		cod_respuesta        		 OUT VARCHAR,
+		msg_respuesta        		 OUT VARCHAR
 	);
   
-    PROCEDURE REGISTRO_USUARIO(
-            p_Id_Usuario         		 IN US_USRI.USRI_USRI%type,
-            p_Nombre_Usuario			 IN US_USRI.USRI_NUSR%type,
-			p_Contrasena_Usuario	 	 IN US_USRI.USRI_CTUS%type,
-			p_Estado				     IN US_USRI.USRI_ESDO%type,
-			p_Id_Persona	 			 IN US_USRI.USRI_PSNA%type,
-			cod_respuesta        		 OUT VARCHAR,
-			msg_respuesta        		 OUT VARCHAR
+    PROCEDURE REGISTRO_USUARIO
+	(
+        p_Id_Usuario         		 IN US_USRI.USRI_USRI%type,
+        p_Nombre_Usuario			 IN US_USRI.USRI_NUSR%type,
+		p_Contrasena_Usuario	 	 IN US_USRI.USRI_CTUS%type,
+		p_Estado				     IN US_USRI.USRI_ESDO%type,
+		p_Id_Persona	 			 IN US_USRI.USRI_PSNA%type,
+		cod_respuesta        		 OUT VARCHAR,
+		msg_respuesta        		 OUT VARCHAR
 	);
 	
-	    PROCEDURE ACTUALIZAR_USUARIO(
-            p_Id_Usuario         		 	 IN US_USRI.USRI_USRI%type,
-            p_Nombre_Usuario			 	 IN US_USRI.USRI_NUSR%type,
-			p_Contrasena_Usuario	 	 	 IN US_USRI.USRI_CTUS%type,
-			p_Contrasena_Usuario_Nueva	 	 IN US_USRI.USRI_CTUS%type,
-			cod_respuesta        		 	 OUT VARCHAR,
-			msg_respuesta        		 	 OUT VARCHAR
+	PROCEDURE REGISTRO_ROLES
+	(
+		p_Id_Rol				IN US_USRS.USRS_ROLS%type,
+		p_Id_Usuario			IN US_USRS.USRS_USRI%type
+	);
+	
+	PROCEDURE ACTUALIZAR_USUARIO
+	(
+        p_Id_Usuario         		 	 IN US_USRI.USRI_USRI%type,
+        p_Nombre_Usuario			 	 IN US_USRI.USRI_NUSR%type,
+		p_Contrasena_Usuario	 	 	 IN US_USRI.USRI_CTUS%type,
+		p_Contrasena_Usuario_Nueva	 	 IN US_USRI.USRI_CTUS%type,
+		cod_respuesta        		 	 OUT VARCHAR,
+		msg_respuesta        		 	 OUT VARCHAR
 	);
 
 END US_QUSRI;
@@ -42,16 +57,17 @@ create or replace PACKAGE BODY US_QUSRI AS
 
 --============================================================================================================================================================
 --------------------------------------------------------------------PROCESO PARA EL REGISTRO PERSONA----------------------------------------------------------
-	PROCEDURE REGISTRO_PERSONA(
+	PROCEDURE REGISTRO_PERSONA
+	(
 	
-            p_Id_Persona         		 IN US_PSNA.PSNA_PSNA%type,
-            p_Nombre_Persona			 IN US_PSNA.PSNA_NOBR%type,
-			p_Apellido_Persona		 	 IN US_PSNA.PSNA_APDO%type,
-			p_Tipo_Documento		     IN US_PSNA.PSNA_TPDOC%type,
-			p_Documento_Persona		 	 IN US_PSNA.PSNA_DOTO%type,
-			p_Fecha_Nacimiento		 	 IN US_PSNA.PSNA_FCNA%type,
-			cod_respuesta        		 OUT VARCHAR,
-			msg_respuesta        		 OUT VARCHAR
+        p_Id_Persona         		 IN US_PSNA.PSNA_PSNA%type,
+        p_Nombre_Persona			 IN US_PSNA.PSNA_NOBR%type,
+		p_Apellido_Persona		 	 IN US_PSNA.PSNA_APDO%type,
+		p_Tipo_Documento		     IN US_PSNA.PSNA_TPDOC%type,
+		p_Documento_Persona		 	 IN US_PSNA.PSNA_DOTO%type,
+		p_Fecha_Nacimiento		 	 IN US_PSNA.PSNA_FCNA%type,
+		cod_respuesta        		 OUT VARCHAR,
+		msg_respuesta        		 OUT VARCHAR
 			
 	) IS
 	
@@ -78,7 +94,8 @@ create or replace PACKAGE BODY US_QUSRI AS
 					
 			END IF;
 			
-			--SI EL DOCUMENTO NO EXISTE EN LA TABLA US_PSNA HACE EL REGISTRO Y AL FINALIZAR MUESTRA UN CODIGO DE OK CON UN MENSAJE
+			--SI EL DOCUMENTO NO EXISTE EN LA TABLA US_PSNA HACE EL REGISTRO 
+			--Y AL FINALIZAR MUESTRA UN CODIGO DE OK CON UN MENSAJE
 			IF(v_Documento_Unico = 0)THEN																
 			
 				INSERT INTO 
@@ -99,14 +116,15 @@ create or replace PACKAGE BODY US_QUSRI AS
 --====================================================================================================================================================================
 --------------------------------------------------------------------PROCESO PARA EL REGISTRO DE USUARIO---------------------------------------------------------------
 
-    PROCEDURE REGISTRO_USUARIO(
-            p_Id_Usuario         		 IN US_USRI.USRI_USRI%type,
-            p_Nombre_Usuario			 IN US_USRI.USRI_NUSR%type,
-			p_Contrasena_Usuario	 	 IN US_USRI.USRI_CTUS%type,
-			p_Estado				     IN US_USRI.USRI_ESDO%type,
-			p_Id_Persona	 			 IN US_USRI.USRI_PSNA%type,
-			cod_respuesta        		 OUT VARCHAR,
-			msg_respuesta        		 OUT VARCHAR
+    PROCEDURE REGISTRO_USUARIO
+	(
+        p_Id_Usuario         		 IN US_USRI.USRI_USRI%type,
+        p_Nombre_Usuario			 IN US_USRI.USRI_NUSR%type,
+		p_Contrasena_Usuario	 	 IN US_USRI.USRI_CTUS%type,
+		p_Estado				     IN US_USRI.USRI_ESDO%type,
+		p_Id_Persona	 			 IN US_USRI.USRI_PSNA%type,
+		cod_respuesta        		 OUT VARCHAR,
+		msg_respuesta        		 OUT VARCHAR
 	) IS
 	
 		v_Numero_Registro number;
@@ -151,15 +169,38 @@ create or replace PACKAGE BODY US_QUSRI AS
 		END;
 --------------------------------------------------------------------TERMINA PROCESO PARA EL REGISTRO DE USUARIO---------------------------------------------------------------
 --============================================================================================================================================================================
+--------------------------------------------------------------------PROCESO REGISTRO ROLES-----------------------------------------------------------------------------------
+	PROCEDURE REGISTRO_ROLES
+	(
+		p_Id_Rol				IN US_USRS.USRS_ROLS%type,
+		p_Id_Usuario			IN US_USRS.USRS_USRI%type
+	)IS
+		
+		v_Numero_Registro number;
+		
+		BEGIN
+			
+			SELECT COUNT (*) INTO v_Numero_Registro FROM US_USRS;
+			
+			IF (v_Numero_Registro >= 0) THEN
+				
+				INSERT INTO 
+					US_USRS(USRS_ROLS,USRS_USRI)
+				VALUES(p_Id_Rol,p_Id_Usuario);
+			
+			END IF ;
+		END;
+--============================================================================================================================================================================
 --------------------------------------------------------------------PROCESO PARA LA ACTUALIZACION DE CONTRASEÑA---------------------------------------------------------------
 
-	PROCEDURE ACTUALIZAR_USUARIO(
-            p_Id_Usuario         		 	 IN US_USRI.USRI_USRI%type,
-            p_Nombre_Usuario			 	 IN US_USRI.USRI_NUSR%type,
-			p_Contrasena_Usuario	 	 	 IN US_USRI.USRI_CTUS%type,
-			p_Contrasena_Usuario_Nueva	 	 IN US_USRI.USRI_CTUS%type,
-			cod_respuesta        		 	 OUT VARCHAR,
-			msg_respuesta        		 	 OUT VARCHAR
+	PROCEDURE ACTUALIZAR_USUARIO
+	(
+        p_Id_Usuario         		 	 IN US_USRI.USRI_USRI%type,
+        p_Nombre_Usuario			 	 IN US_USRI.USRI_NUSR%type,
+		p_Contrasena_Usuario	 	 	 IN US_USRI.USRI_CTUS%type,
+		p_Contrasena_Usuario_Nueva	 	 IN US_USRI.USRI_CTUS%type,
+		cod_respuesta        		 	 OUT VARCHAR,
+		msg_respuesta        		 	 OUT VARCHAR
 	)IS
 	
 		v_Contrsana varchar(255);
