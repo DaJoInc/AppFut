@@ -85,7 +85,7 @@ create or replace PACKAGE BODY EQ_QEQPO AS
 ---------------------------------------------------------------------------TERMINA PROCESO REGISTRO EQUIPO---------------------------------------------------------------------------------
 --=========================================================================================================================================================================================
 -------------------------------------PROCESO DE REGISTRO DE DIRECTIVOS CON SU EQUIPO-------------------------------------------------------------------------------------------------------
-	PROCEDURE REGISTRO DIRECTIVO_EQUIPO
+	PROCEDURE REGISTRO_DIRECTIVO_EQUIPO
 	(			
 				p_Id_Dt_Equipo  	IN US_DTEQ.DTEQ_DTEQ%type,
 				p_Id_Equipo_Dt 		IN US_DTEQ.DTEQ_EQPO%type,

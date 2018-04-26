@@ -40,9 +40,9 @@ create or replace PACKAGE BODY US_QINGS AS
 	IS
      SELECT USRI_USRI
 		FROM US_USRI
-			WHERE US_USRI = p_Nombre_Usuario AND USRI_NUSR = p_Contrasena_Usuario;
+			WHERE USRI_NUSR = p_Nombre_Usuario AND USRI_CTUS = utl_i18n.string_to_raw(data =>dbms_obfuscation_toolkit.md5(input_string => p_Contrasena_Usuario));
 	 
-	 r_Usuario USRI_USRI%ROWTYPE;
+	 r_Usuario number;
 	 v_Id_Usuario number;
 	 v_Id_Rol number;
 	 
@@ -54,7 +54,7 @@ create or replace PACKAGE BODY US_QINGS AS
 		--SI LA CONSULTA DEL CRUSOR DEVUELVE UN VERDADERRO CUARDA EL ID DE USUARIO EN VARIABLE
 		IF(USUARIO%FOUND)THEN
 				
-				v_Id_Usuario := r_Usuario.USRI_USRI;
+				v_Id_Usuario := r_Usuario;
 							
 		END IF;
 	
