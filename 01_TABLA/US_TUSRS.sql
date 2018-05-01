@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "US_USRS"
+CREATE TABLE  "FS_ADDEP_US"."US_USRS"
 (
 	"USRS_ROLS" 		NUMBER(32) NULL,  --"Id roles"
 	"USRS_USRI" 		NUMBER(32) NULL	  --"Id usuario"	
@@ -27,10 +27,10 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_USRS 				IS 'Contiene los roles que tiene cada usuario'
+COMMENT ON TABLE "FS_ADDEP_US"."US_USRS" 				IS 'Contiene los roles que tiene cada usuario'
 ;
-COMMENT ON COLUMN US_USRS.USRS_ROLS  	IS 'Identificador unico del rol'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRS"."USRS_ROLS"  	IS 'Identificador unico del rol'
 ;
-COMMENT ON COLUMN US_USRS.USRS_USRI  	IS 'Identificador unico del usuario'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRS"."USRS_USRI"  	IS 'Identificador unico del usuario'
 ;
 

@@ -4,7 +4,7 @@
 ----------------------------------REGISTRO DE USUARIO                                                                                                                           -
 ----------------------------------ACTUALIZAR CONTRASEÑA                                                                                                                         -
 --===============================================================================================================================================================================
-CREATE OR REPLACE PACKAGE US_QUSRI AS
+CREATE OR REPLACE PACKAGE FS_ADDEP_US.US_QUSRI AS
 
 	PROCEDURE REGISTRO_PERSONA
 	(
@@ -45,15 +45,15 @@ CREATE OR REPLACE PACKAGE US_QUSRI AS
 		msg_respuesta        		 	 OUT VARCHAR
 	);
 
-END US_QUSRI;
+END FS_ADDEP_US.US_QUSRI;
 
  /
 
 prompt
-prompt PACKAGE BODY: US_QUSRI
+prompt PACKAGE BODY: FS_ADDEP_US.US_QUSRI
 prompt
 
-create or replace PACKAGE BODY US_QUSRI AS
+create or replace PACKAGE BODY FS_ADDEP_US.US_QUSRI AS
 
 --============================================================================================================================================================
 --------------------------------------------------------------------PROCESO PARA EL REGISTRO PERSONA----------------------------------------------------------
@@ -177,4 +177,4 @@ create or replace PACKAGE BODY US_QUSRI AS
 --------------------------------------------------------------------TERMINA PROCESO PARA LA ACTUALIZACION DE CONTRASEÑA-----------------------------------------------------------	
 --================================================================================================================================================================================
 
-END US_QUSRI;
+END FS_ADDEP_US.US_QUSRI;

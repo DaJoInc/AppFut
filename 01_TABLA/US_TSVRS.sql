@@ -4,7 +4,7 @@
 /*  DBMS       : Oracle 								*/
 /* ---------------------------------------------------- */
 
-CREATE TABLE  "US_SVRS"
+CREATE TABLE  "FS_ADDEP_US"."US_SVRS"
 (
 	"SVRS_ROLS" NUMBER(32) NULL, --"id rol"
 	"SVRS_SRVI" NUMBER(32) NULL	 --"id servicio"
@@ -25,10 +25,10 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_SVRS IS 'Contiene los roles que pueden acceder a cada servicio'
+COMMENT ON TABLE "FS_ADDEP_US"."US_SVRS" IS 'Contiene los roles que pueden acceder a cada servicio'
 ;
-COMMENT ON COLUMN US_SVRS.SVRS_ROLS		  IS 'Contiene el identificador de cada rol'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_SVRS"."SVRS_ROLS"		  IS 'Contiene el identificador de cada rol'
 ;
-COMMENT ON COLUMN US_SVRS.SVRS_ROLS  IS 'Contiene el identificador de cada servicio'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_SVRS"."SVRS_ROLS"  IS 'Contiene el identificador de cada servicio'
 ;
 

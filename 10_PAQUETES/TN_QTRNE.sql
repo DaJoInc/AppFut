@@ -3,7 +3,7 @@
 ----------------------------------REGISTRO TORNEO
 ----------------------------------REGISTRO EQUIPO TORNEOS
 --===========================================================================================================================================================
-CREATE OR REPLACE PACKAGE TN_QTRNE AS
+CREATE OR REPLACE PACKAGE FS_ADDEP_US.TN_QTRNE AS
 
 PROCEDURE REGISTRAR_TORNEO
 (
@@ -28,15 +28,15 @@ PROCEDURE REGISTRO_EQUIPO_TORNEO
 		
 );
 	
-END TN_QTRNE;
+END FS_ADDEP_US.TN_QTRNE;
 
  /
 
 prompt
-prompt PACKAGE BODY: TN_QTRNE
+prompt PACKAGE BODY: FS_ADDEP_US.TN_QTRNE
 prompt
 
-create or replace PACKAGE BODY TN_QTRNE AS
+create or replace PACKAGE BODY FS_ADDEP_US.TN_QTRNE AS
 --===============================================================================================================================================
 -----------------------------------------------------PROCESO REGISTRO TORNEO--------------------------------------------------------------------
 
@@ -113,4 +113,4 @@ PROCEDURE REGISTRAR_TORNEO
 	END;
 -------------------------------------------------------------FINAL PROCESO REGISTRO EQUIPO TORNEO------------------------------------------------------------------------------
 --=============================================================================================================================================================================
-END TN_QTRNE;
+END FS_ADDEP_US.TN_QTRNE;

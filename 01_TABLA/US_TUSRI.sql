@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "US_USRI"
+CREATE TABLE  "FS_ADDEP_US"."US_USRI"
 (
 	"USRI_USRI" 		NUMBER(32) NOT NULL,		--"Id de usuario"
 	"USRI_NUSR" 		VARCHAR2(250) NOT NULL,		--"Nombre de usuario"
@@ -30,20 +30,20 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_USRI 				IS 'Contiene los datos los usuarios registrados'
+COMMENT ON TABLE "FS_ADDEP_US"."US_USRI" 				IS 'Contiene los datos los usuarios registrados'
 ;
-COMMENT ON COLUMN US_USRI.USRI_USRI  	IS 'Identificador unico del usuario'
-;
-COMMENT ON COLUMN US_USRI.USRI_NUSR  	IS 'Contiene el nombre registrado por el usuario'
-;
-COMMENT ON COLUMN US_USRI.USRI_CTUS  	IS 'Contiene la contraseña registrada por el usuario'
-;
-COMMENT ON COLUMN US_USRI.USRI_ESDO   	IS 'Contiene el estado en el que se encuentra el usuario'
-;
-COMMENT ON COLUMN US_USRI.USRI_PSNA   	IS 'Contiene el identificador unico del usuario'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRI"."USRI_USRI"  	IS 'Identificador unico del usuario'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRI"."USRI_NUSR"  	IS 'Contiene el nombre registrado por el usuario'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRI"."USRI_CTUS"  	IS 'Contiene la contraseña registrada por el usuario'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRI"."USRI_ESDO"   	IS 'Contiene el estado en el que se encuentra el usuario'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_USRI"."USRI_PSNA"   	IS 'Contiene el identificador unico del usuario'
 ;
 
-ALTER TABLE  "US_USRI" 
+ALTER TABLE  "FS_ADDEP_US"."US_USRI"
  ADD CONSTRAINT "PK_US_USRI"
 	PRIMARY KEY ("USRI_USRI") 
  USING INDEX 

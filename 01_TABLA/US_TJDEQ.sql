@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "US_JDEQ"
+CREATE TABLE  "FS_ADDEP_US".""FS_ADDEP_US"."US_JDEQ""
 (
 	"JDEQ_JDEQ" 	NUMBER(32) NOT NULL,	 --"id jugador equipo"
 	"JDEQ_EQPO" 	NUMBER(32) NOT NULL,	 --"nombre equipo"
@@ -28,18 +28,18 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_JDEQ IS 'Contiene los jugadores con su respectivo equipo'
+COMMENT ON TABLE "FS_ADDEP_US"."US_JDEQ" IS 'Contiene los jugadores con su respectivo equipo'
 ;
-COMMENT ON COLUMN US_JDEQ.JDEQ_JDEQ		  IS 'Identificador unico de jugadorequipo'
-;
-COMMENT ON COLUMN US_JDEQ.JDEQ_EQPO  IS 'Nombre de equipo'
-;
-COMMENT ON COLUMN US_JDEQ.JDEQ_ESDO  IS 'estado del equipo'
-;
-COMMENT ON COLUMN US_JDEQ.JDEQ_USRI  IS 'identificador del usuario'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_JDEQ"."JDEQ_JDEQ"		  IS 'Identificador unico de jugadorequipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_JDEQ"."JDEQ_EQPO"  IS 'Nombre de equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_JDEQ"."JDEQ_ESDO"  IS 'estado del equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_JDEQ"."JDEQ_USRI"  IS 'identificador del usuario'
 ;
 
-ALTER TABLE  "US_JDEQ" 
+ALTER TABLE  "FS_ADDEP_US"."US_JDEQ"
  ADD CONSTRAINT "PK_US_JDEQ"
 	PRIMARY KEY ("JDEQ_JDEQ") 
  USING INDEX 

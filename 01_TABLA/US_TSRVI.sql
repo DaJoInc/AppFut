@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "US_SRVI"
+CREATE TABLE  "FS_ADDEP_US"."US_SRVI"
 (
 	"SRVI_SRVI" 	NUMBER(32) NOT NULL,	--"Id de servicio"
 	"SRVI_NBSV" 	VARCHAR2(50) NULL		--"Nombre de servicio"
@@ -27,16 +27,16 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_SRVI IS 'Contiene los servicios'
+COMMENT ON TABLE "FS_ADDEP_US"."US_SRVI" IS 'Contiene los servicios'
 ;
-COMMENT ON COLUMN US_SRVI.SRVI_SRVI		  IS 'Identificador unico del servicio'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_SRVI"."SRVI_SRVI"		  IS 'Identificador unico del servicio'
 ;
-COMMENT ON COLUMN US_SRVI.SRVI_NBSV  IS 'Nombre del servico'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_SRVI"."SRVI_NBSV"  IS 'Nombre del servico'
 ;
 
 /* Create Primary Keys, Indexes, Uniques, Checks, Triggers */
 
-ALTER TABLE  "US_SRVI" 
+ALTER TABLE  "FS_ADDEP_US"."US_SRVI"
  ADD CONSTRAINT "PK_US_SRVI"
 	PRIMARY KEY ("SRVI_SRVI") 
  USING INDEX 

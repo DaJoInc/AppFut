@@ -2,7 +2,7 @@
 --CONTIENE LOS SIGUINETES PROCESOS																																					  -
 ----------------------------------INGRESO DE USUARIO                                                                                                                                  -
 --=====================================================================================================================================================================================
-CREATE OR REPLACE PACKAGE US_QINGS AS
+CREATE OR REPLACE PACKAGE FS_ADDEP_US.US_QINGS AS
 
 	PROCEDURE INGRESO_USUARIO
 	(
@@ -13,15 +13,15 @@ CREATE OR REPLACE PACKAGE US_QINGS AS
 	
 	);
 	
-END US_QINGS;	
+END FS_ADDEP_US.US_QINGS;	
 
  /
 
 prompt
-prompt PACKAGE BODY: US_QINGS
+prompt PACKAGE BODY: FS_ADDEP_US.US_QINGS
 prompt
 
-create or replace PACKAGE BODY US_QINGS AS
+create or replace PACKAGE BODY FS_ADDEP_US.US_QINGS AS
 
 --===============================================================================================================================================================================
 ---------------------------------------------------------------------PROCEDIMIENTO DE INGRESO DE USUARIO------------------------------------------------------------------------
@@ -84,4 +84,4 @@ create or replace PACKAGE BODY US_QINGS AS
 	END;
 --------------------------------------------------------------------------------------------------------TERMINA PROCESO DE INGRESO--------------------------------------------------------------
 --==============================================================================================================================================================================================
-END US_QINGS;
+END FS_ADDEP_US.US_QINGS;

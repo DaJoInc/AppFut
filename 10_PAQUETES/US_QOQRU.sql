@@ -1,5 +1,5 @@
 ----------------------------------PAQUETE ORQUESTADOR REGISTRO USUARIO-------------------------------------------------
-create or replace PACKAGE US_QOQRU AS
+create or replace PACKAGE FS_ADDEP_US.US_QOQRU AS
 
 PROCEDURE REGISTRO_USUARIO
 (
@@ -24,15 +24,15 @@ PROCEDURE REGISTRO_USUARIO
 		
 );
 
-END US_QOQRU;
+END FS_ADDEP_US.US_QOQRU;
 
  /
 
 prompt
-prompt PACKAGE BODY: US_QOQRU
+prompt PACKAGE BODY: FS_ADDEP_US.US_QOQRU
 prompt
 
-create or replace PACKAGE BODY US_QOQRU AS
+create or replace PACKAGE BODY FS_ADDEP_US.US_QOQRU AS
 
 PROCEDURE REGISTRO_USUARIO
 (
@@ -82,4 +82,4 @@ PROCEDURE REGISTRO_USUARIO
 		
 	END;
 	
-END US_QOQRU;
+END FS_ADDEP_US.US_QOQRU;

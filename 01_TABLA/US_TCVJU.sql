@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "US_CVJU"
+CREATE TABLE  "FS_ADDEP_US"."US_CVJU"
 (
 	"CVJU_CVJU" NUMBER(32) NOT NULL, --"id convocatori jugador"
 	"CVJU_CVCT" NUMBER(32) NOT NULL, --"id convocatoria"
@@ -29,18 +29,18 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_CVJU 					IS 'Contiene datos de los jugadores preinscritos a un equipo'
+COMMENT ON TABLE "FS_ADDEP_US"."US_CVJU" 					IS 'Contiene datos de los jugadores preinscritos a un equipo'
 ;
-COMMENT ON COLUMN US_CVJU.CVJU_CVJU			IS 'Identificador unico de convocatoria jugador'
-;
-COMMENT ON COLUMN US_CVJU.CVJU_CVCT  		IS 'Identificador de la convocatoria'
-;
-COMMENT ON COLUMN US_CVJU.CVJU_ESDO  		IS 'Estado de la convocatoria jugador'
-;
-COMMENT ON COLUMN US_CVJU.CVJU_USRI  		IS 'id del usuario'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_CVJU"."CVJU_CVJU"			IS 'Identificador unico de convocatoria jugador'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_CVJU"."CVJU_CVCT"  		IS 'Identificador de la convocatoria'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_CVJU"."CVJU_ESDO"  		IS 'Estado de la convocatoria jugador'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_CVJU"."CVJU_USRI"  		IS 'id del usuario'
 ;
 
-ALTER TABLE  "US_CVJU" 
+ALTER TABLE  "FS_ADDEP_US"."US_CVJU" 
  ADD CONSTRAINT "PK_US_CVJU"
 	PRIMARY KEY ("CVJU_CVJU") 
  USING INDEX 

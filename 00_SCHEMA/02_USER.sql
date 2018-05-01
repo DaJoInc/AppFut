@@ -1,0 +1,26 @@
+REM ******************************************************************
+REM Fecha         : 26/03/2018
+REM Realizado por : TheOverLordKotan
+REM Base de Datos : FS_ADDEP_US
+REM ******************************************************************
+
+REM USUARIO DEL APLICATIVO PACRIM_US
+
+drop user FS_ADDEP_US cascade;
+
+Create user FS_ADDEP_US
+ Identified by FS_ADDEP_US
+ Default tablespace TS_ADDEP
+ Temporary tablespace TS_TADDEP    
+ account unlock;
+
+
+Grant RESOURCE, 
+  ALTER USER, CREATE CLUSTER, CREATE DATABASE LINK, CREATE PROFILE , ALTER PROFILE, 
+  CREATE PROCEDURE, CREATE PUBLIC DATABASE LINK, 
+  CREATE PUBLIC SYNONYM, CREATE ROLE, CREATE SEQUENCE, 
+  CREATE SESSION, CREATE SYNONYM, CREATE TABLE, 
+  CREATE TRIGGER, CREATE USER , CREATE VIEW, CREATE TYPE,
+  DROP PUBLIC SYNONYM, EXECUTE ANY PROCEDURE, 
+  SELECT ANY SEQUENCE, SELECT ANY TABLE, 
+  UNLIMITED TABLESPACE to FS_ADDEP_US;

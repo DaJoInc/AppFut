@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "EQ_EQPO"
+CREATE TABLE  "FS_ADDEP_US"."EQ_EQPO"
 (
 	"EQPO_EQPO" NUMBER(32) NOT NULL, --"id equipo"
 	"EQPO_NBEQ" VARCHAR2(250) NULL,	 --"Nombre de equipo"
@@ -27,16 +27,16 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE EQ_EQPO 					IS 'Contiene llos equipos registrados'
+COMMENT ON TABLE "FS_ADDEP_US"."EQ_EQPO" 					IS 'Contiene llos equipos registrados'
 ;
-COMMENT ON COLUMN EQ_EQPO.EQPO_EQPO		IS 'Identificador unico por equipo'
-;
-COMMENT ON COLUMN EQ_EQPO.EQPO_NBEQ  		IS 'Contiene los nombres de los equipos registrados'
-;
-COMMENT ON COLUMN EQ_EQPO.EQPO_ESDO  		IS 'Estado de los equipos'
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_EQPO"."EQPO_EQPO"		IS 'Identificador unico por equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_EQPO"."EQPO_NBEQ"  		IS 'Contiene los nombres de los equipos registrados'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_EQPO"."EQPO_ESDO"  		IS 'Estado de los equipos'
 ;
 
-ALTER TABLE  "EQ_EQPO" 
+ALTER TABLE  "FS_ADDEP_US"."EQ_EQPO"
  ADD CONSTRAINT "PK_EQ_EQPO"
 	PRIMARY KEY ("EQPO_EQPO") 
  USING INDEX 

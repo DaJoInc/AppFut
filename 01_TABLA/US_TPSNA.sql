@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "US_PSNA"
+CREATE TABLE  "FS_ADDEP_US"."US_PSNA"
 (
 	"PSNA_PSNA" 	NUMBER(32) NOT NULL,		--"Id de la persona"
 	"PSNA_NOBR" 	VARCHAR2(250) NOT NULL,		--"Nombre persona"
@@ -29,23 +29,23 @@ NOCOMPRESS
 NOCACHE
 NOPARALLEL
 MONITORING;
-COMMENT ON TABLE US_PSNA 				IS 'Contiene los datos de las personas registradas'
+COMMENT ON TABLE "FS_ADDEP_US"."US_PSNA" 				IS 'Contiene los datos de las personas registradas'
 ;
-COMMENT ON COLUMN US_PSNA.PSNA_PSNA  	IS 'Identificador unico de la persona'
-;
-COMMENT ON COLUMN US_PSNA.PSNA_NOBR  	IS 'Contiene el nombre de la persona'
-;
-COMMENT ON COLUMN US_PSNA.PSNA_APDO  	IS 'Contiene el apellido de la persona'
-;
-COMMENT ON COLUMN US_PSNA.PSNA_TPDOC   	IS 'Contiene el tipo de documento'
-;
-COMMENT ON COLUMN US_PSNA.PSNA_DOTO   	IS 'Contiene el numero de documento '
-;
-COMMENT ON COLUMN US_PSNA.PSNA_TPDOC   	IS 'Contiene la fecha de nacimiento de la persona'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_PSNA"  	IS 'Identificador unico de la persona'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_NOBR"  	IS 'Contiene el nombre de la persona'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_APDO"  	IS 'Contiene el apellido de la persona'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_TPDOC"   	IS 'Contiene el tipo de documento'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_DOTO"  	IS 'Contiene el numero de documento '
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_PSNA"."PSNA_TPDOC"   	IS 'Contiene la fecha de nacimiento de la persona'
 ;
 
 
-ALTER TABLE  "US_PSNA" 
+ALTER TABLE  "FS_ADDEP_US"."US_PSNA" 
  ADD CONSTRAINT "PK_US_PSNA"
 	PRIMARY KEY ("PSNA_PSNA") 
  USING INDEX 

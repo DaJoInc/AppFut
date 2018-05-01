@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "TN_TREQ"
+CREATE TABLE  "FS_ADDEP_US"."TN_TREQ"
 (
 	"TREQ_TREQ" NUMBER(32) NOT NULL, --"id torneo equipo"
 	"TREQ_EQPO" NUMBER(32) NULL, --"id equipo"

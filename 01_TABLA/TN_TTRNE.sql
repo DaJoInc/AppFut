@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "TN_TRNE"
+CREATE TABLE  "FS_ADDEP_US"."TN_TRNE"
 (
 	"TRNE_TRNE" NUMBER(32) NOT NULL, --"id torneo"
 	"TRNE_TRNB" VARCHAR2(250) NULL,	 --"nombre del torneo"
@@ -29,18 +29,18 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE TN_TRNE 					IS 'Contiene los torneos registrados'
+COMMENT ON TABLE "FS_ADDEP_US"."TN_TRNE" 					IS 'Contiene los torneos registrados'
 ;
-COMMENT ON COLUMN TN_TRNE.TRNE_TRNE			IS 'Identificador unico por torneo'
-;
-COMMENT ON COLUMN TN_TRNE.TRNE_TRNB  		IS 'Numero de equipos que pueden pertenecer a un torneo'
-;
-COMMENT ON COLUMN TN_TRNE.TRNE_NMEQ  		IS 'Estado de los equipos'
-;
-COMMENT ON COLUMN TN_TRNE.TRNE_ESDO  		IS 'Estado del torneo'
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TRNE"."TRNE_TRNE"			IS 'Identificador unico por torneo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TRNE"."TRNE_TRNB"  		IS 'Numero de equipos que pueden pertenecer a un torneo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TRNE"."TRNE_NMEQ"  		IS 'Estado de los equipos'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TRNE"."TRNE_ESDO"  		IS 'Estado del torneo'
 ;
 
-ALTER TABLE  "TN_TRNE" 
+ALTER TABLE  "FS_ADDEP_US"."TN_TRNE" 
  ADD CONSTRAINT "PK_TN_TRNE"
 	PRIMARY KEY ("TRNE_TRNE") 
  USING INDEX 

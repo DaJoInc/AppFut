@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "US_DTEQ"
+CREATE TABLE  "FS_ADDEP_US"."US_DTEQ"
 (
 	"DTEQ_DTEQ" NUMBER(32) NOT NULL, --"id directivas equipo"
 	"DTEQ_EQPO" NUMBER(32) NOT NULL, --"id equipo"
@@ -28,18 +28,18 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE US_DTEQ 					IS 'Contiene datos de los directivos de un equipo'
+COMMENT ON TABLE "FS_ADDEP_US"."US_DTEQ" 					IS 'Contiene datos de los directivos de un equipo'
 ;
-COMMENT ON COLUMN US_DTEQ.DTEQ_DTEQ			IS 'Identificador unico de los directivos del equipo'
-;
-COMMENT ON COLUMN US_DTEQ.DTEQ_EQPO  		IS 'Identificador de equipo'
-;
-COMMENT ON COLUMN US_DTEQ.DTEQ_ESDO  		IS 'Estado de los directivos del equipo'
-;
-COMMENT ON COLUMN US_DTEQ.DTEQ_USRI  		IS 'id del usuario'
+COMMENT ON COLUMN "FS_ADDEP_US"."US_DTEQ"."DTEQ_DTEQ"			IS 'Identificador unico de los directivos del equipo'
+;                                        
+COMMENT ON COLUMN "FS_ADDEP_US"."US_DTEQ"."DTEQ_EQPO"  		IS 'Identificador de equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_DTEQ"."DTEQ_ESDO" 		IS 'Estado de los directivos del equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."US_DTEQ"."DTEQ_USRI" 		IS 'id del usuario'
 ;
 
-ALTER TABLE  "US_DTEQ" 
+ALTER TABLE  "FS_ADDEP_US"."US_DTEQ" 
  ADD CONSTRAINT "PK_US_DTEQ"
 	PRIMARY KEY ("DTEQ_DTEQ") 
  USING INDEX 

@@ -3,7 +3,7 @@
 ----------------------------------REGISTRO DE EQUIPO                                                                                       -
 ----------------------------------REGISTRO DE DIRECTIVOS POR EQUIPO                                                                        -
 --==========================================================================================================================================
-CREATE OR REPLACE PACKAGE EQ_QEQPO AS
+CREATE OR REPLACE PACKAGE FS_ADDEP_US.EQ_QEQPO AS
 
 	PROCEDURE REGISTRO_EQUIPO
 	(
@@ -34,15 +34,15 @@ CREATE OR REPLACE PACKAGE EQ_QEQPO AS
 				msg_respuesta        		 OUT VARCHAR
 	);
 	
-END EQ_QEQPO;
+END FS_ADDEP_US.EQ_QEQPO;
 
  /
 
 prompt
-prompt PACKAGE BODY: EQ_QEQPO
+prompt PACKAGE BODY: FS_ADDEP_US.EQ_QEQPO
 prompt
 
-create or replace PACKAGE BODY EQ_QEQPO AS
+create or replace PACKAGE BODY FS_ADDEP_US.EQ_QEQPO AS
 --============================================================================================================================================================
 -----------------------------------------------------PROCESO REGISTRO EQUIPO---------------------------------------------------------------------------------
 	PROCEDURE REGISTRO_EQUIPO(
@@ -135,4 +135,4 @@ create or replace PACKAGE BODY EQ_QEQPO AS
 		
 		END IF;
 	END;
-END EQ_QEQPO;
+END FS_ADDEP_US.EQ_QEQPO;

@@ -6,7 +6,7 @@
 
 
 
-CREATE TABLE  "EQ_CVCT"
+CREATE TABLE  "FS_ADDEP_US"."EQ_CVCT"
 (
 	"CVCT_CVCT" 	NUMBER(32) NOT NULL,	--"id convocatoria"
 	"CVCT_EQPO" 	NUMBER(32) NOT NULL,	--"id equipo"
@@ -28,16 +28,16 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE EQ_CVCT 					IS 'Contiene las convocatoria por cada equipo'
+COMMENT ON TABLE "FS_ADDEP_US"."EQ_CVCT" 					IS 'Contiene las convocatoria por cada equipo'
 ;
-COMMENT ON COLUMN EQ_CVCT.CVCT_CVCT		    IS 'Identificador unico de la convocataoria'
-;
-COMMENT ON COLUMN EQ_CVCT.CVCT_EQPO  		IS 'identificador del equipo'
-;
-COMMENT ON COLUMN EQ_CVCT.CVCT_ESDO  		IS 'Estado de la convocatoria'
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_CVCT"."CVCT_CVCT"		    IS 'Identificador unico de la convocataoria'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_CVCT"."CVCT_EQPO"  		IS 'identificador del equipo'
+;                                         
+COMMENT ON COLUMN "FS_ADDEP_US"."EQ_CVCT"."CVCT_ESDO"  		IS 'Estado de la convocatoria'
 ;
 
-ALTER TABLE  "EQ_CVCT" 
+ALTER TABLE  "FS_ADDEP_US"."EQ_CVCT" 
  ADD CONSTRAINT "PK_EQ_CVCT"
 	PRIMARY KEY ("CVCT_CVCT") 
  USING INDEX 
@@ -54,13 +54,3 @@ ALTER TABLE  "EQ_CVCT"
 	BUFFER_POOL DEFAULT 
  );
 
-CREATE INDEX "IXFK_EQ_CVCT_EQ_EQPO"   
- ON  "EQ_CVCT" ("CVCT_EQPO") 
-;
-
-/* Create Foreign Key Constraints */
-
-ALTER TABLE  "EQ_CVCT" 
- ADD CONSTRAINT "FK_EQ_CVCT_EQ_EQPO"
-	FOREIGN KEY ("CVCT_EQPO") REFERENCES  "EQ_EQPO" ("EQPO_EQPO")
-;
