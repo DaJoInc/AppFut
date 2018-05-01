@@ -34,15 +34,15 @@ CREATE OR REPLACE PACKAGE FS_ADDEP_US.EQ_QEQPO AS
 				msg_respuesta        		 OUT VARCHAR
 	);
 	
-END FS_ADDEP_US.EQ_QEQPO;
+END EQ_QEQPO;
 
  /
 
 prompt
-prompt PACKAGE BODY: FS_ADDEP_US.EQ_QEQPO
+prompt PACKAGE BODY: EQ_QEQPO
 prompt
 
-create or replace PACKAGE BODY FS_ADDEP_US.EQ_QEQPO AS
+create or replace PACKAGE BODY EQ_QEQPO AS
 --============================================================================================================================================================
 -----------------------------------------------------PROCESO REGISTRO EQUIPO---------------------------------------------------------------------------------
 	PROCEDURE REGISTRO_EQUIPO(
@@ -135,4 +135,4 @@ create or replace PACKAGE BODY FS_ADDEP_US.EQ_QEQPO AS
 		
 		END IF;
 	END;
-END FS_ADDEP_US.EQ_QEQPO;
+END EQ_QEQPO;

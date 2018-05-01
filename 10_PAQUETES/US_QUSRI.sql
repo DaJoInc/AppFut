@@ -45,7 +45,7 @@ CREATE OR REPLACE PACKAGE FS_ADDEP_US.US_QUSRI AS
 		msg_respuesta        		 	 OUT VARCHAR
 	);
 
-END FS_ADDEP_US.US_QUSRI;
+END US_QUSRI;
 
  /
 
@@ -177,4 +177,4 @@ create or replace PACKAGE BODY FS_ADDEP_US.US_QUSRI AS
 --------------------------------------------------------------------TERMINA PROCESO PARA LA ACTUALIZACION DE CONTRASEÑA-----------------------------------------------------------	
 --================================================================================================================================================================================
 
-END FS_ADDEP_US.US_QUSRI;
+END US_QUSRI;
