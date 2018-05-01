@@ -1,4 +1,4 @@
-create or replace TYPE TO_LTCV IS
+create or replace TYPE FS_ADDEP_US.TO_LTCV IS
 
 OBJECT (
 			CVCT_CVCT    number(38,0),
