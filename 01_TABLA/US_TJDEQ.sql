@@ -5,7 +5,7 @@
 /* ---------------------------------------------------- */
 
 
-CREATE TABLE  "FS_ADDEP_US".""FS_ADDEP_US"."US_JDEQ""
+CREATE TABLE  "FS_ADDEP_US"."US_JDEQ"
 (
 	"JDEQ_JDEQ" 	NUMBER(32) NOT NULL,	 --"id jugador equipo"
 	"JDEQ_EQPO" 	NUMBER(32) NOT NULL,	 --"nombre equipo"
