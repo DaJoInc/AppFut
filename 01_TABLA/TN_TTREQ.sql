@@ -27,18 +27,18 @@ NOCACHE
 NOPARALLEL
 MONITORING;
 
-COMMENT ON TABLE EQ_EQPO 					IS 'Contiene llos equipos registrados'
+COMMENT ON TABLE "FS_ADDEP_US"."TN_TREQ" 					IS 'Contiene llos equipos registrados'
 ;
-COMMENT ON COLUMN EQ_EQPO.EQPO_EQPO		IS 'Identificador unico por equipo'
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TREQ"."TREQ_TREQ"		IS 'Identificador unico por equipo'
 ;
-COMMENT ON COLUMN EQ_EQPO.EQPO_NBEQ  		IS 'Contiene los nombres de los equipos registrados'
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TREQ"."TREQ_EQPO"  		IS 'Contiene los nombres de los equipos registrados'
 ;
-COMMENT ON COLUMN EQ_EQPO.EQPO_ESDO  		IS 'Estado de los equipos'
+COMMENT ON COLUMN "FS_ADDEP_US"."TN_TREQ"."TREQ_TRNE"  		IS 'Estado de los equipos'
 ;
 
-ALTER TABLE  "TN_TREQ" 
+ALTER TABLE  "FS_ADDEP_US"."TN_TREQ" 
  ADD CONSTRAINT "PK_TN_TREQ"
-	PRIMARY KEY ("TREQ_EQPO") 
+	PRIMARY KEY ("TREQ_TREQ") 
  USING INDEX 
  LOGGING 
  TABLESPACE	TS_IADDEP 
