@@ -16,7 +16,7 @@ CREATE TABLE  "EQ_CVCT"
 
 COMMENT ON TABLE EQ_CVCT 					IS 'Contiene las convocatoria por cada equipo'
 ;
-COMMENT ON COLUMN EQ_CVCT.CVCT_CVCT		IS 'Identificador unico de la convocataoria'
+COMMENT ON COLUMN EQ_CVCT.CVCT_CVCT		    IS 'Identificador unico de la convocataoria'
 ;
 COMMENT ON COLUMN EQ_CVCT.CVCT_EQPO  		IS 'identificador del equipo'
 ;
