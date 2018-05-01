@@ -1,52 +1,51 @@
-CREATE OR REPLACE PACKAGE FS_ADDEP_US.US_QJGCON AS
+CREATE OR REPLACE PACKAGE US_QJGCON AS
 
 
 	
 	PROCEDURE MOSTRAR_CONVOCATORIA
 	(
-		p_Id_Convocatoria  	OUT EQ_CVCT.CVCT_CVCT%type,
-		p_Id_Equipo			OUT EQ_CVCT.CVCT_EQPO%type,
-		p_Nombre_Equipo		OUT EQ_EQPO.EQPO_NBEQ%type,
+		 p_Lista_Convocatorias OUT TT_LTCV
 	
 	);
 	
-END FS_ADDEP_US.US_QJGCON;	
+END US_QJGCON;	
 
 /
 
 prompt
-prompt PACKAGE BODY: FS_ADDEP_US.US_QJGCON
+prompt PACKAGE BODY: US_QJGCON
 prompt
 
-create or replace PACKAGE BODY FS_ADDEP_US.US_QJGCON AS
+create or replace PACKAGE BODY US_QJGCON AS
 
 	PROCEDURE MOSTRAR_CONVOCATORIA
 	(
-		p_Id_Convocatoria  	OUT EQ_CVCT.CVCT_CVCT%type,
-		p_Id_Equipo			OUT EQ_CVCT.CVCT_EQPO%type,
-		p_Nombre_Equipo		OUT EQ_EQPO.EQPO_NBEQ%type,
+		 p_Lista_Convocatorias OUT TT_LTCV
 	
 	)IS
 	CURSOR convocatoria IS
 		SELECT EQ_CVCT.CVCT_CVCT,
                EQ_CVCT.CVCT_EQPO,
-				EQ_EQPO.EQPO_NBEQ
+               EQ_EQPO.EQPO_NBEQ
 		FROM EQ_CVCT
 		INNER JOIN EQ_EQPO ON EQ_CVCT.CVCT_EQPO = EQ_EQPO.EQPO_EQPO;
-		
-		r_Convocatoria%ROWTYPE;
+        
+        
+		 v_Lista_Convocatoria TO_LTCV; 
+         v_TT_Lista_Convocatoria TT_LTCV := TT_LTCV();
 	BEGIN
-		OPEN convocatoria;
-		FETCH convocatoria INTO r_Convocatoria;
-		
-		WHILE convocatoria%FOUND
-		LOOP
-			/* Procesamiento de los registros recuperados */
-			FETCH convocatoria INTO r_Convocatoria;
-		END LOOP;
-		CLOSE convocatoria;
-	
-	END;
+       
+       
+         
+             FOR i IN convocatoria LOOP
+         
+                v_Lista_Convocatoria:=TO_LTCV(i.CVCT_CVCT,i.CVCT_EQPO,i.EQPO_NBEQ);
+                v_TT_Lista_Convocatoria.extend;
+                v_TT_Lista_Convocatoria(v_TT_Lista_Convocatoria.count):=v_Lista_Convocatoria;
+         
+             END LOOP;
+         
+             p_Lista_Convocatorias:=v_TT_Lista_Convocatoria;
+                 
 
-	
-END FS_ADDEP_US.US_QJGCON;		
+end;	
