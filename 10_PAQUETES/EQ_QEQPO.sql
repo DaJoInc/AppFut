@@ -24,6 +24,16 @@ CREATE OR REPLACE PACKAGE EQ_QEQPO AS
 				p_Id_Usuario_Dt		IN US_DTEQ.DTEQ_USRI%type
 	);
 	
+	PROCEDURE REGISTRO_CONVOCATORIA
+	(			
+				p_Id_Convocatoria  	IN EQ_CVCT.CVCT_CVCT%type,
+				p_Id_Equipo			IN EQ_CVCT.CVCT_EQPO%type,
+				p_Estado			IN EQ_CVCT.CVCT_ESDO%type,
+				
+				cod_respuesta        		 OUT VARCHAR,
+				msg_respuesta        		 OUT VARCHAR
+	);
+	
 END EQ_QEQPO;
 
  /
@@ -53,15 +63,6 @@ create or replace PACKAGE BODY EQ_QEQPO AS
 	
 	BEGIN
 		
-		/*SELECT COUNT (*) INTO v_numero_Registro FROM EQ_EQPO;
-		
-		IF(v_numero_Registro = 0 )THEN
-
-			INSERT INTO 
-				EQ_QEQPO(EQPO_EQPO,EQPO_NBEQ,EQPO_ESDO)
-			VALUES(p_Id_Equipo,p_Nombre_Equipo,p_Estado_Equipo);
-			
-		END;*/
 		--CONSULTA SI PARA SABER SI UN USUARIO YA RREGISTRO UN EQUIPO
 		SELECT COUNT (*) INTO v_Numero_Registro_Us FROM US_DTEQ WHERE DTEQ_USRI = p_Id_Usuario;
 		
@@ -107,4 +108,31 @@ create or replace PACKAGE BODY EQ_QEQPO AS
 		END IF;
 	END;
 
+	PROCEDURE REGISTRO_CONVOCATORIA
+	(			
+				p_Id_Convocatoria 	IN EQ_CVCT.CVCT_CVCT%type,
+				p_Id_Equipo			IN EQ_CVCT.CVCT_EQPO%type,
+				p_Estado			IN EQ_CVCT.CVCT_ESDO%type,
+			
+				
+				cod_respuesta        		 OUT VARCHAR,
+				msg_respuesta        		 OUT VARCHAR
+	)IS
+	
+	v_Numero_Registro number ;
+	BEGIN
+	
+		SELECT COUNT (*) INTO v_Numero_Registro FROM EQ_CVCT;
+		
+		IF(v_Numero_Registro >=0 )THEN
+		
+			INSERT INTO 
+				EQ_CVCT(CVCT_CVCT,CVCT_EQPO,CVCT_ESDO)
+			VALUES(p_Id_Convocatoria,p_Id_Equipo,p_Estado);
+			
+			cod_respuesta:='OK';
+		    msg_respuesta:='SE HA CREADO UNA NUEVA CONVOCATORIA';
+		
+		END IF;
+	END;
 END EQ_QEQPO;

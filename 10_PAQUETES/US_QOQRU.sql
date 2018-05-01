@@ -56,18 +56,24 @@ PROCEDURE REGISTRO_USUARIO
 		msg_respuesta        		 OUT VARCHAR
 		
 )IS
-
+		v_Id_Perosna number;
+		v_Id_Usuario number;
+		v_Estado number;
 	BEGIN
 	
+		v_Id_Perosna:=ID_PERONSA.NextVal;
+		v_Id_Usuario:=ID_USUARIO.NextVal;
+		v_Estado:=0;
+		
 		US_QVALI.VALIDACION_USUARIO(p_Documento_Persona,p_Nombre_Usuario,cod_respuesta,msg_respuesta);
 		
 		IF(cod_respuesta='OK') THEN
 			
-			US_QUSRI.REGISTRO_PERSONA(p_Id_Persona,p_Nombre_Persona,p_Apellido_Persona,p_Tipo_Documento,p_Documento_Persona,p_Fecha_Nacimiento,cod_respuesta,msg_respuesta);
+			US_QUSRI.REGISTRO_PERSONA(v_Id_Perosna,p_Nombre_Persona,p_Apellido_Persona,p_Tipo_Documento,p_Documento_Persona,p_Fecha_Nacimiento,cod_respuesta,msg_respuesta);
 			
-			US_QUSRI.REGISTRO_USUARIO(p_Id_Usuario,p_Nombre_Usuario,p_Contrasena_Usuario,p_Estado,p_Id_Persona,cod_respuesta,msg_respuesta);
+			US_QUSRI.REGISTRO_USUARIO(v_Id_Usuario,p_Nombre_Usuario,p_Contrasena_Usuario,v_Estado,v_Id_Perosna,cod_respuesta,msg_respuesta);
 
-			US_QUSRI.REGISTRO_ROLES(p_Id_Rol,p_Id_Usuario);
+			US_QUSRI.REGISTRO_ROLES(p_Id_Rol,v_Id_Usuario);
 			
 			cod_respuesta:='OK';
             msg_respuesta:='EL USUARIO FUE REGISTRADA EN EL SISTEMA';
