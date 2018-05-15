@@ -1,1 +1,0 @@
-INSERT INTO "OW_TST_US"."Usuarios"("nickname","contrasena","id_usuario") values('ssmm92','smillan53',2)
